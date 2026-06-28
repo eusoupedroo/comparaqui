@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaqui — Comparação de mercados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="page-content">
+        <main>
+          <div class="page-inner">
+            <header class="page-header">
+              <span class="eyebrow">Decida com clareza</span>
+              <h1 class="page-title">Comparação de mercados</h1>
+              <p class="page-subtitle">Veja o valor total da sua lista em cada mercado, identifique a melhor oferta e escolha onde comprar.</p>
+            </header>
+
+            <section class="stacked-section">
+              <div class="metrics-row" data-comparison-summary></div>
+            </section>
+
+            <section class="stacked-section">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow">Mercados avaliados</span>
+                  <h2 class="page-title section-title--large">Compare ofertas lado a lado</h2>
+                </div>
+              </div>
+              <div class="comparison-grid" data-market-cards></div>
+            </section>
+
+            <section class="stacked-section">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow">Detalhamento dos valores</span>
+                  <h2 class="page-title section-title--large">Tabela comparativa</h2>
+                </div>
+              </div>
+              <div data-comparison-table></div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/comparacao.js"></script>
+  </body>
+</html>

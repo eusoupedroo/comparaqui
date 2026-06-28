@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaqui - Design system</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/design-system.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="page-content">
+        <main>
+          <div class="page-inner">
+            <header class="page-header">
+              <span class="eyebrow">Padroes do produto</span>
+              <h1 class="page-title">Design system</h1>
+              <p class="page-subtitle">Catalogo vivo dos componentes do Comparaqui, usando o mesmo shell, CSS e helpers das paginas reais.</p>
+            </header>
+
+            <div class="ds-layout">
+              <nav class="ds-toc" aria-label="Indice do design system">
+                <p class="ds-toc__title">Indice</p>
+                <div id="toc"></div>
+              </nav>
+
+              <section class="ds-content" aria-label="Componentes do design system">
+                <article class="ds-section" id="s-tokens">
+                  <h2 class="ds-section__title"><span class="ds-section__num">1</span><span class="ds-section__label">Tokens</span></h2>
+                  <p class="ds-section__desc">Valores lidos de <span class="ds-code">base.css</span> para evitar duplicar hexadecimais no catalogo.</p>
+                  <div class="ds-token-grid" id="ds-colors"></div>
+                </article>
+
+                <article class="ds-section" id="s-tipografia">
+                  <h2 class="ds-section__title"><span class="ds-section__num">2</span><span class="ds-section__label">Tipografia</span><span class="ds-section__meta">(Manrope)</span></h2>
+                  <p class="ds-section__desc">Escala visual definida em <span class="ds-code">base.css</span>. As amostras abaixo usam apenas tokens de tipografia.</p>
+                  <div class="ds-demo ds-demo--stack">
+                    <div class="ds-type-scale">
+                      <div class="ds-type-sample ds-type-sample--3xl">
+                        <span>Aa - 36px / Bold</span>
+                        <span class="ds-type-token">var(--fs-3xl) + var(--fw-bold)</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--2xl">
+                        <span>Aa - 28px / Bold</span>
+                        <span class="ds-type-token">var(--fs-2xl) + var(--fw-bold) (page title base)</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--xl">
+                        <span>Aa - 22px / Semibold</span>
+                        <span class="ds-type-token">var(--fs-xl) + var(--fw-semibold)</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--lg">
+                        <span>Aa - 18px / Semibold</span>
+                        <span class="ds-type-token">var(--fs-lg) + var(--fw-semibold)</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--md">
+                        <span>Aa - 15px / Medium</span>
+                        <span class="ds-type-token">var(--fs-md) + var(--fw-medium)</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--base">
+                        <span>Aa - 14px / Regular</span>
+                        <span class="ds-type-token">var(--fs-base) - body</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--sm">
+                        <span>Aa - 13px / Regular</span>
+                        <span class="ds-type-token">var(--fs-sm) - small / meta</span>
+                      </div>
+                      <div class="ds-type-sample ds-type-sample--xs">
+                        <span>Aa - 12px / Uppercase</span>
+                        <span class="ds-type-token">var(--fs-xs) + uppercase + letter-spacing - label</span>
+                      </div>
+                    </div>
+                    <div class="ds-type-callout">
+                      Tipografia adaptativa: <span class="ds-code">--fs-page-title</span>, <span class="ds-code">--fs-metric-value</span> e <span class="ds-code">--fs-hero-title</span> usam <span class="ds-code">clamp()</span> para escalar com a viewport.
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-acoes">
+                  <h2 class="ds-section__title"><span class="ds-section__num">3</span><span class="ds-section__label">Acoes</span></h2>
+                  <p class="ds-section__desc">Botoes, acoes secundarias, botoes de icone e demonstracao de toast.</p>
+                  <div class="ds-demo">
+                    <a class="btn btn--primary btn--md" href="./compras.html">Montar minha lista</a>
+                    <a class="btn btn--secondary btn--md" href="./comparacao.html">Comparar mercados</a>
+                    <a class="btn btn--inverted btn--md" href="./compras.html">Acao invertida</a>
+                    <button class="btn btn--secondary btn--md btn--pill pill-button" type="button">Pill button</button>
+                    <button class="icon-button icon-button--neutral" type="button" aria-label="Filtrar" data-ds-icon="filter"></button>
+                    <button class="btn btn--primary btn--md" type="button" data-ds-toast>Mostrar toast</button>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-badges">
+                  <h2 class="ds-section__title"><span class="ds-section__num">4</span><span class="ds-section__label">Badges e status</span></h2>
+                  <div class="ds-demo">
+                    <span class="badge">4 itens</span>
+                    <span class="badge promo-badge">Promocao</span>
+                    <span class="market-badge">Mais barato</span>
+                    <span class="table-badge">Hortifruti</span>
+                    <span class="status-chip positive">Disponivel</span>
+                    <span class="status-chip negative">Indisponivel</span>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-entrada">
+                  <h2 class="ds-section__title"><span class="ds-section__num">5</span><span class="ds-section__label">Busca e filtros</span></h2>
+                  <div class="ds-demo ds-demo--stack">
+                    <div class="search-field">
+                      <span data-ds-icon="search"></span>
+                      <input class="search-input" type="search" placeholder="Buscar por produto ou marca" />
+                    </div>
+                    <div class="filter-strip" aria-label="Filtros de categoria">
+                      <button class="filter-chip active" type="button">Todos</button>
+                      <button class="filter-chip" type="button">Hortifruti</button>
+                      <button class="filter-chip" type="button">Carnes</button>
+                      <button class="filter-chip" type="button">Limpeza</button>
+                    </div>
+                    <div class="quantity-controls">
+                      <button type="button" aria-label="Remover unidade">-</button>
+                      <span>2</span>
+                      <button type="button" aria-label="Adicionar unidade">+</button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-formularios">
+                  <h2 class="ds-section__title"><span class="ds-section__num">6</span><span class="ds-section__label">Formularios</span></h2>
+                  <p class="ds-section__desc">Padroes reutilizaveis para autenticacao, filtros avancados e futuras telas com entrada de dados.</p>
+                  <div class="ds-demo ds-demo--forms">
+                    <form class="form-card ds-form-card-demo">
+                      <header class="form-card__header">
+                        <h3 class="form-card__title">Entrar na conta</h3>
+                        <p class="form-card__text">Exemplo de card, campos, erro, checkbox, links e chamada textual de cadastro.</p>
+                      </header>
+
+                      <div class="form-stack">
+                        <label class="form-field" for="ds-email">
+                          <span class="form-label">E-mail</span>
+                          <span class="form-input-wrap">
+                            <span class="form-input-icon" data-ds-icon="mail"></span>
+                            <input class="form-input" id="ds-email" type="email" placeholder="voce@email.com" value="cliente@comparaqui.com" />
+                          </span>
+                        </label>
+
+                        <label class="form-field" for="ds-password">
+                          <span class="form-label">Senha</span>
+                          <span class="form-input-wrap">
+                            <span class="form-input-icon" data-ds-icon="lock"></span>
+                            <input class="form-input" id="ds-password" type="password" placeholder="Sua senha" value="12345678" />
+                            <button class="form-password-toggle" type="button" aria-label="Mostrar senha" data-ds-icon="eye"></button>
+                          </span>
+                        </label>
+
+                        <label class="form-field is-error" for="ds-error">
+                          <span class="form-label">Campo com erro</span>
+                          <span class="form-input-wrap">
+                            <span class="form-input-icon" data-ds-icon="mail"></span>
+                            <input class="form-input" id="ds-error" type="email" value="email-invalido" aria-invalid="true" />
+                          </span>
+                          <span class="form-error">Informe um e-mail valido.</span>
+                        </label>
+
+                        <label class="form-field" for="ds-disabled">
+                          <span class="form-label">Campo disabled</span>
+                          <input class="form-input" id="ds-disabled" type="text" value="Conta bloqueada temporariamente" disabled />
+                        </label>
+
+                        <div class="form-row">
+                          <label class="form-checkbox">
+                            <input type="checkbox" checked />
+                            <span>Lembrar de mim</span>
+                          </label>
+                          <a class="form-link" href="#">Esqueci minha senha</a>
+                        </div>
+                      </div>
+
+                      <div class="form-actions">
+                        <button class="btn btn--primary btn--md btn-primary" type="button">Entrar</button>
+                      </div>
+
+                    <p class="auth-register">
+                      Ainda nao tem conta?
+                      <a class="form-link" href="#">Cadastre-se</a>
+                    </p>
+                  </form>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-cards">
+                  <h2 class="ds-section__title"><span class="ds-section__num">7</span><span class="ds-section__label">Cards</span></h2>
+                  <div class="ds-demo ds-demo--grid">
+                    <article class="product-card">
+                      <div class="product-thumb">FR</div>
+                      <div class="product-info">
+                        <div class="product-card__header">
+                          <h3>Maca gala</h3>
+                          <span class="badge promo-badge">Oferta</span>
+                        </div>
+                        <p>Natural da Terra - 1 kg</p>
+                        <div class="product-meta">
+                          <span class="price">R$ 8,49</span>
+                          <span class="status-chip positive">Disponivel</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <div class="metrics-row">
+                      <div class="metric-card">
+                        <strong>R$ 126,40</strong>
+                        <span>Total estimado</span>
+                      </div>
+                    </div>
+
+                    <article class="economy-card economy-card--compact">
+                      <span class="section-eyebrow">Economia</span>
+                      <strong class="total-economy-card__value">R$ 24,90</strong>
+                      <p>Valor economizado ao escolher o mercado com melhor combinacao de precos.</p>
+                      <a class="btn btn--inverted btn--md" href="./comparacao.html">Ver comparacao</a>
+                    </article>
+
+                    <article class="ui-card ui-card--section">
+                      <h3 class="card-title">Card de secao</h3>
+                      <p class="text-muted">Use <span class="ds-code">.ui-card</span> com variantes quando o card nao for um componente especifico.</p>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-tabelas">
+                  <h2 class="ds-section__title"><span class="ds-section__num">8</span><span class="ds-section__label">Tabelas</span></h2>
+                  <div class="market-table-wrap">
+                    <table class="market-table products-table">
+                      <thead>
+                        <tr>
+                          <th>Produto</th>
+                          <th>Categoria</th>
+                          <th>Preco estimado</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="highlight-better-price">
+                          <td>
+                            <div class="product-cell">
+                              <span class="product-cell__icon">LT</span>
+                              <div>
+                                <strong>Leite integral</strong>
+                                <span class="product-cell__meta">Itambe - 1 L</span>
+                              </div>
+                            </div>
+                          </td>
+                          <td><span class="table-badge">Laticinios</span></td>
+                          <td><strong class="products-table__price">R$ 5,89</strong></td>
+                          <td><span class="status-chip positive">Disponivel</span></td>
+                        </tr>
+                        <tr class="unavailable">
+                          <td>
+                            <div class="product-cell">
+                              <span class="product-cell__icon">SB</span>
+                              <div>
+                                <strong>Sabao liquido</strong>
+                                <span class="product-cell__meta">Omo - 3 L</span>
+                              </div>
+                            </div>
+                          </td>
+                          <td><span class="table-badge">Limpeza</span></td>
+                          <td><strong class="products-table__price">R$ 31,90</strong></td>
+                          <td><span class="status-chip negative">Indisponivel</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-destaque-preco">
+                  <h2 class="ds-section__title"><span class="ds-section__num">9</span><span class="ds-section__label">Destaque de melhor preco</span></h2>
+                  <p class="ds-section__desc">Aplicar quando um mercado ou item tiver o menor preco na comparacao.</p>
+                  <div class="ds-demo ds-demo--grid">
+                    <article class="ui-card ui-card--section highlight-better-price">
+                      <span class="market-badge">Melhor preco</span>
+                      <h3 class="card-title">Pao de Acucar</h3>
+                      <p class="text-muted">Menor valor total para a lista selecionada.</p>
+                      <strong class="products-table__price">R$ 682,40</strong>
+                    </article>
+                    <article class="product-card highlight-better-price">
+                      <div class="product-thumb">LT</div>
+                      <div class="product-info">
+                        <div class="product-card__header">
+                          <h3>Leite integral</h3>
+                          <span class="table-badge">Menor preco</span>
+                        </div>
+                        <p>Itambe - 1 L</p>
+                        <div class="product-meta">
+                          <span class="price">R$ 5,89</span>
+                          <span class="status-chip positive">Disponivel</span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-destaque-aumento">
+                  <h2 class="ds-section__title"><span class="ds-section__num">10</span><span class="ds-section__label">Destaque de aumento</span></h2>
+                  <p class="ds-section__desc">Aplicar quando um mercado ou item tiver aumento de preco na comparacao.</p>
+                  <div class="ds-demo ds-demo--grid">
+                    <article class="ui-card ui-card--section highlight-increase">
+                      <span class="market-badge">Alta de preco</span>
+                      <h3 class="card-title">Oleo de Soja Liza 900ml</h3>
+                      <p class="text-muted">Preco subiu 5% nesta semana no Pao de Acucar.</p>
+                      <strong class="products-table__price">+5%</strong>
+                    </article>
+                    <article class="product-card highlight-increase">
+                      <div class="product-thumb">LT</div>
+                      <div class="product-info">
+                        <div class="product-card__header">
+                          <h3>Leite integral</h3>
+                          <span class="table-badge">Alta de preco</span>
+                        </div>
+                        <p>Itambe - 1 L</p>
+                        <div class="product-meta">
+                          <span class="price">+5%</span>
+                          <span class="status-chip positive">Monitorado</span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-alerta-produto">
+                  <h2 class="ds-section__title"><span class="ds-section__num">11</span><span class="ds-section__label">Alerta Produto</span></h2>
+                  <p class="ds-section__desc">Card de alerta da Home MVP. Exibe um produto por vez, sem setas, com paginacao por dots em <span class="ds-code">.product-alert__dots</span>.</p>
+                  <div class="ds-demo ds-demo--grid">
+                    <article class="panel-card side-panel__section product-alert-card highlight-decrease">
+                      <h3 class="panel-card__title">Alerta Produto</h3>
+                      <div class="product-alert">
+                        <div class="product-alert__media">
+                          <span class="product-alert__image product-alert__image--fallback" aria-hidden="true">🍚</span>
+                        </div>
+                        <div class="product-alert__body">
+                          <strong class="product-alert__name">Arroz Camil 5kg</strong>
+                          <p class="product-alert__text">
+                            Preco caiu <span class="product-alert__percent">12%</span> esta semana no Carrefour
+                          </p>
+                        </div>
+                      </div>
+                      <div class="product-alert__dots" aria-label="Alertas de produto">
+                        <button class="product-alert__dot product-alert__dot--active" type="button" aria-label="Mostrar alerta 1" aria-current="true"></button>
+                        <button class="product-alert__dot" type="button" aria-label="Mostrar alerta 2" aria-current="false"></button>
+                      </div>
+                    </article>
+
+                    <article class="panel-card side-panel__section product-alert-card highlight-increase">
+                      <h3 class="panel-card__title">Alerta Produto</h3>
+                      <div class="product-alert">
+                        <div class="product-alert__media">
+                          <span class="product-alert__image product-alert__image--fallback" aria-hidden="true">🛢️</span>
+                        </div>
+                        <div class="product-alert__body">
+                          <strong class="product-alert__name">Oleo de Soja Liza 900ml</strong>
+                          <p class="product-alert__text">
+                            Preco subiu <span class="product-alert__percent">5%</span> nesta semana no Pao de Acucar
+                          </p>
+                        </div>
+                      </div>
+                      <div class="product-alert__dots" aria-label="Alertas de produto">
+                        <button class="product-alert__dot" type="button" aria-label="Mostrar alerta 1" aria-current="false"></button>
+                        <button class="product-alert__dot product-alert__dot--active" type="button" aria-label="Mostrar alerta 2" aria-current="true"></button>
+                      </div>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-dropdown">
+                  <h2 class="ds-section__title"><span class="ds-section__num">12</span><span class="ds-section__label">Dropdown contextual</span></h2>
+                  <p class="ds-section__desc">Use <span class="ds-code">.app-header__dropdown</span> para listas curtas acionadas por botoes de icone, como notificacoes e produtos similares.</p>
+                  <div class="ds-demo">
+                    <div class="product-actions">
+                      <button class="icon-button icon-button--neutral active" type="button" aria-label="Ver similares" title="Ver similares">
+                        <span data-ds-icon="git-compare"></span>
+                      </button>
+                      <div class="app-header__dropdown app-header__dropdown--notifications product-similar-menu ds-dropdown-demo">
+                        <div class="app-header__dropdown-head">Produtos similares</div>
+                        <article class="app-header__notification product-similar-menu__item">
+                          <div class="product-similar-menu__row">
+                            <span class="products-table__icon">PZ</span>
+                            <div>
+                              <strong>Pizza Congelada Frango Perdigao 420g</strong>
+                              <span>Pizzas - 420 g</span>
+                              <time>Perdigao</time>
+                            </div>
+                          </div>
+                          <div class="product-similar-menu__footer">
+                            <strong class="product-similar-menu__price">R$ 17,99</strong>
+                            <button class="btn-secondary btn-secondary--compact" type="button">
+                              <span data-ds-icon="shopping-cart"></span>
+                              Incluir
+                            </button>
+                          </div>
+                        </article>
+                        <article class="app-header__notification product-similar-menu__item">
+                          <div class="product-similar-menu__row">
+                            <span class="products-table__icon">PZ</span>
+                            <div>
+                              <strong>Pizza Congelada Frango C/ Requeijao Aurora 300g</strong>
+                              <span>Pizzas - 300 g</span>
+                              <time>Aurora</time>
+                            </div>
+                          </div>
+                          <div class="product-similar-menu__footer">
+                            <strong class="product-similar-menu__price">R$ 15,49</strong>
+                            <button class="btn-secondary btn-secondary--compact" type="button">
+                              <span data-ds-icon="shopping-cart"></span>
+                              Incluir
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-progresso-saudavel">
+                  <h2 class="ds-section__title"><span class="ds-section__num">13</span><span class="ds-section__label">Barras de progresso</span></h2>
+                  <p class="ds-section__desc">Padroes para progresso percentual e graficos futuros de economia. Em <span class="ds-code">.market-table__bar</span>, a area total usa <span class="ds-code">--verde-apoio</span> e o preenchimento usa <span class="ds-code">--verde-primario</span>.</p>
+                  <div class="ds-demo ds-demo--stack">
+                    <div class="ds-progress-demo">
+                      <div class="market-table__savings">
+                        <div class="market-table__bar" aria-hidden="true">
+                          <span class="market-table__bar-fill ds-progress-fill--sm"></span>
+                        </div>
+                        <span>25%</span>
+                      </div>
+                      <div class="market-table__savings">
+                        <div class="market-table__bar" aria-hidden="true">
+                          <span class="market-table__bar-fill ds-progress-fill--md"></span>
+                        </div>
+                        <span>62%</span>
+                      </div>
+                      <div class="market-table__savings">
+                        <div class="market-table__bar" aria-hidden="true">
+                          <span class="market-table__bar-fill ds-progress-fill--lg"></span>
+                        </div>
+                        <span>88%</span>
+                      </div>
+                    </div>
+                    <article class="panel-card panel-card--healthy">
+                      <h3 class="panel-card__title">Compra saudavel</h3>
+                      <p class="panel-healthy__text">65% da sua compra e composta por alimentos naturais.</p>
+                      <div class="panel-healthy__bar-wrap">
+                        <div class="panel-healthy__bar">
+                          <div class="panel-healthy__fill" style="width: 65%"></div>
+                        </div>
+                        <div class="panel-healthy__value">
+                          <span data-ds-icon="leaf"></span>
+                          <span>65%</span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-skeletons">
+                  <h2 class="ds-section__title"><span class="ds-section__num">14</span><span class="ds-section__label">Skeletons</span></h2>
+                  <p class="ds-section__desc">Estados temporarios para listas, cards e tabelas enquanto o mockup simula carregamento de dados.</p>
+                  <div class="ds-demo ds-demo--grid">
+                    <article class="skeleton-card" aria-hidden="true">
+                      <div class="skeleton-row">
+                        <span class="skeleton skeleton-avatar"></span>
+                        <div class="skeleton-stack">
+                          <span class="skeleton skeleton-line skeleton-line--lg"></span>
+                          <span class="skeleton skeleton-line skeleton-line--md"></span>
+                        </div>
+                      </div>
+                      <span class="skeleton skeleton-line"></span>
+                      <span class="skeleton skeleton-line skeleton-line--sm"></span>
+                    </article>
+                    <article class="skeleton-card" aria-hidden="true">
+                      <div class="skeleton-row">
+                        <span class="skeleton skeleton-thumb"></span>
+                        <div class="skeleton-stack">
+                          <span class="skeleton skeleton-line skeleton-line--lg"></span>
+                          <span class="skeleton skeleton-line skeleton-line--md"></span>
+                          <span class="skeleton skeleton-line skeleton-line--sm"></span>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="skeleton-card" aria-hidden="true">
+                      <span class="skeleton skeleton-line skeleton-line--md"></span>
+                      <span class="skeleton skeleton-line"></span>
+                      <span class="skeleton skeleton-line"></span>
+                      <span class="skeleton skeleton-line skeleton-line--lg"></span>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-estados">
+                  <h2 class="ds-section__title"><span class="ds-section__num">15</span><span class="ds-section__label">Estados vazios</span></h2>
+                  <p class="ds-section__desc">Este exemplo e renderizado pelo helper compartilhado <span class="ds-code">renderEmptyState</span>.</p>
+                  <div id="ds-empty"></div>
+                </article>
+
+                <article class="ds-section" id="s-componentes-reais">
+                  <h2 class="ds-section__title"><span class="ds-section__num">16</span><span class="ds-section__label">Componentes reais adicionais</span></h2>
+                  <p class="ds-section__desc">Componentes usados nas telas atuais do MVP que tambem fazem parte do design system.</p>
+                  <div class="ds-demo ds-demo--stack">
+                    <article class="smart-list-card">
+                      <div class="smart-list-card__content">
+                        <span class="smart-list-card__badge">NOVO</span>
+                        <h3 class="smart-list-card__title">Lista Inteligente</h3>
+                        <p class="smart-list-card__text">Monte sua lista e compare precos nos mercados cadastrados.</p>
+                        <a class="btn btn--inverted btn--md" href="./compras.html">Montar lista</a>
+                      </div>
+                    </article>
+
+                    <div class="home-help-list">
+                      <div class="home-help-item">
+                        <span class="home-help-item__icon" data-ds-icon="search-check"></span>
+                        <span>Compare mercados cadastrados com base na sua lista.</span>
+                      </div>
+                      <div class="price-trend-item">
+                        <span class="price-trend-item__icon" data-ds-icon="chart-up"></span>
+                        <p>Arroz caiu 12% nesta semana no Carrefour.</p>
+                      </div>
+                    </div>
+
+                    <article class="swap-card">
+                      <div class="swap-info">
+                        <strong>Troca sugerida</strong>
+                        <span>Arroz Camil 5kg por Arroz Prato Fino 5kg</span>
+                        <span class="economy">Economize R$ 4,20</span>
+                      </div>
+                      <div class="swap-card__footer">
+                        <span class="swap-card__price-label">Nova estimativa</span>
+                        <strong class="swap-card__price text-price">R$ 21,70</strong>
+                      </div>
+                    </article>
+
+                    <section class="market-header">
+                      <div class="market-header__identity">
+                        <span class="market-header__logo" aria-hidden="true">CP</span>
+                        <div>
+                          <h3 class="market-header__title">Comparaqui Market</h3>
+                          <div class="market-header__meta-row">
+                            <span>2,4 km</span>
+                            <span>Melhor oferta</span>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <div class="comparison-toolbar">
+                      <label class="comparison-sort">
+                        Ordenar
+                        <select>
+                          <option>Maior economia</option>
+                          <option>Menor distancia</option>
+                        </select>
+                      </label>
+                      <label class="comparison-search">
+                        <span data-ds-icon="search"></span>
+                        <input type="search" placeholder="Buscar produto" />
+                      </label>
+                    </div>
+
+                    <div class="cluster cluster--between cluster--wrap">
+                      <span class="text-meta">Utilitarios: .cluster, .stack, .text-meta, .text-price e .table-note.</span>
+                      <strong class="text-price">R$ 682,40</strong>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-layout">
+                  <h2 class="ds-section__title"><span class="ds-section__num">17</span><span class="ds-section__label">Layout, titulos e paineis</span></h2>
+                  <p class="ds-section__desc">Paginas com conteudo lateral usam grid de 12 colunas, conteudo principal em 8 colunas e painel lateral em 4.</p>
+                  <div class="page-grid">
+                    <section class="page-main col-8">
+                      <div class="ui-card ui-card--section">
+                        <div class="section-header">
+                          <div>
+                            <span class="eyebrow">Principal</span>
+                            <h3 class="section-title">.page-main.col-8</h3>
+                          </div>
+                          <span class="badge">8 colunas</span>
+                        </div>
+                      </div>
+                    </section>
+                    <aside class="page-side col-4 side-panel">
+                      <div class="side-panel__section panel-card">
+                        <h3 class="panel-title">.page-side.col-4</h3>
+                        <p class="text-muted">Painel lateral sticky em desktop e empilhado no mobile.</p>
+                      </div>
+                    </aside>
+                  </div>
+                </article>
+
+                <article class="ds-section" id="s-shell">
+                  <h2 class="ds-section__title"><span class="ds-section__num">18</span><span class="ds-section__label">Shell da aplicacao</span></h2>
+                  <p class="ds-section__desc">A pagina usa <span class="ds-code">initShell</span> em modo MVP, sem renderizar sidebar, header global ou navegacao mobile.</p>
+                  <div class="ds-mini-shell" aria-hidden="true">
+                    <div class="ds-mini-sidebar">
+                      <span class="sidebar-nav-item sidebar-nav-item--active">
+                        <span class="sidebar-nav-item__icon">*</span>
+                        <span class="sidebar-nav-item__text">
+                          <span class="sidebar-nav-item__title">Design system</span>
+                        </span>
+                      </span>
+                      <span class="sidebar-nav-item">
+                        <span class="sidebar-nav-item__icon">o</span>
+                        <span class="sidebar-nav-item__text">
+                          <span class="sidebar-nav-item__title">Minha lista</span>
+                        </span>
+                      </span>
+                    </div>
+                    <div class="ds-mini-main">
+                      <div class="ds-mini-header"></div>
+                      <div class="ds-demo-box">
+                        <span class="eyebrow">Conteudo</span>
+                        <h3 class="section-title">Page inner + page grid</h3>
+                        <p class="text-muted">Padrao de paginas com conteudo principal em <span class="ds-code">.page-main.col-8</span> e lateral em <span class="ds-code">.page-side.col-4</span>.</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initShell, renderEmptyState, showToast } from "./scripts/ui.js";
+      import { icon } from "./scripts/icons.js";
+
+      initShell({ activePage: "design-system", shellVariant: "mvp" });
+
+      const designTokens = [
+        ["Cor", "Verde primario", "--verde-primario"],
+        ["Cor", "Verde escuro", "--verde-escuro"],
+        ["Cor", "Verde apoio", "--verde-apoio"],
+        ["Cor", "Texto", "--cinza-texto"],
+        ["Cor", "Texto secundario", "--cinza-secundario"],
+        ["Cor", "Borda", "--cinza-borda"],
+        ["Cor", "Alerta", "--vermelho-alerta"],
+        ["Cor", "Alerta claro", "--vermelho-alerta-claro"],
+        ["Cor", "Promocao", "--laranja-promocional"],
+        ["Raio", "Radius xs", "--radius-xs"],
+        ["Raio", "Radius sm", "--radius-sm"],
+        ["Raio", "Radius md", "--radius-md"],
+        ["Raio", "Radius lg", "--radius-lg"],
+        ["Espaco", "Space 8", "--space-8"],
+        ["Espaco", "Space 16", "--space-16"],
+        ["Espaco", "Space 24", "--space-24"],
+        ["Sombra", "Card", "--shadow-card"],
+        ["Sombra", "Whisper", "--shadow-whisper"],
+        ["Fonte", "Familia principal", "--font-primary"],
+        ["Tipo", "FS xs", "--fs-xs"],
+        ["Tipo", "FS sm", "--fs-sm"],
+        ["Tipo", "FS base", "--fs-base"],
+        ["Tipo", "FS md", "--fs-md"],
+        ["Tipo", "FS lg", "--fs-lg"],
+        ["Tipo", "FS xl", "--fs-xl"],
+        ["Tipo", "FS 2xl", "--fs-2xl"],
+        ["Tipo", "FS 3xl", "--fs-3xl"],
+        ["Peso", "Regular", "--fw-regular"],
+        ["Peso", "Medium", "--fw-medium"],
+        ["Peso", "Semibold", "--fw-semibold"],
+        ["Peso", "Bold", "--fw-bold"],
+        ["Linha", "Tight", "--lh-tight"],
+        ["Linha", "Normal", "--lh-normal"],
+        ["Tipo adaptativo", "Page title", "--fs-page-title"],
+        ["Tipo adaptativo", "Metric value", "--fs-metric-value"],
+        ["Tipo adaptativo", "Hero title", "--fs-hero-title"]
+      ];
+
+      const rootStyles = getComputedStyle(document.documentElement);
+      const colorsContainer = document.querySelector("#ds-colors");
+
+      if (colorsContainer) {
+        colorsContainer.innerHTML = designTokens
+          .map(([type, label, token]) => {
+            const value = rootStyles.getPropertyValue(token).trim();
+            const swatchStyle = type === "Cor" ? `--token-color: ${value}` : "";
+            return `
+              <div class="ds-token">
+                <span class="ds-token__swatch" style="${swatchStyle}"></span>
+                <span>
+                  <strong>${label}</strong>
+                  <span>${type} - ${token} - ${value}</span>
+                </span>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      renderEmptyState(document.querySelector("#ds-empty"), {
+        title: "Nenhum resultado encontrado",
+        description: "Use este padrao para listas, tabelas e areas de conteudo sem dados.",
+        action: {
+          href: "./compras.html",
+          label: "Adicionar produtos"
+        }
+      });
+
+      document.querySelectorAll("[data-ds-toast]").forEach((button) => {
+        button.addEventListener("click", () => {
+          showToast("Toast do design system exibido com sucesso.");
+        });
+      });
+
+      document.querySelectorAll("[data-ds-icon]").forEach((target) => {
+        target.innerHTML = icon(target.dataset.dsIcon, { size: 20, strokeWidth: 1.75 });
+      });
+
+      const toc = document.querySelector("#toc");
+      const sections = [...document.querySelectorAll(".ds-section")];
+
+      if (toc) {
+        toc.innerHTML = sections
+          .map((section) => {
+            const number = section.querySelector(".ds-section__num")?.textContent.trim() ?? "";
+            const label = section.querySelector(".ds-section__label")?.textContent.trim() ?? section.id;
+            return `<a href="#${section.id}"><span>${number}</span>${label}</a>`;
+          })
+          .join("");
+      }
+    </script>
+  </body>
+</html>

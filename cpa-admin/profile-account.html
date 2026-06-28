@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaqui - Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="page-content">
+        <main>
+          <div class="page-inner">
+            <header class="page-header">
+              <span class="eyebrow">Conta</span>
+              <h1 class="page-title">Perfil</h1>
+              <p class="page-subtitle">Resumo da sua atividade, economia acumulada e listas acompanhadas no Comparaqui.</p>
+            </header>
+
+            <div class="page-grid">
+              <section class="page-main col-8">
+                <article class="card" data-profile-summary></article>
+                <article class="card" data-purchase-history></article>
+                <article class="card" data-saved-lists></article>
+              </section>
+
+              <aside class="page-side col-4 side-panel">
+                <article class="card" data-economy-ranking></article>
+                <article class="card" data-monitored-items></article>
+              </aside>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/profile-account.js"></script>
+  </body>
+</html>

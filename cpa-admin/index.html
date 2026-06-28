@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaqui — Sua compra mais inteligente começa aqui</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+  </head>
+  <body class="home-mvp">
+    <div class="app-shell">
+      <div class="page-content">
+        <main>
+          <div class="page-inner">
+            <div class="page-grid">
+              <div class="page-main col-8">
+                <div class="home-hero-row">
+                <section class="hero">
+                  <div class="hero-content">
+                    <h1 class="hero-title">Sua compra mais inteligente começa aqui.</h1>
+                    <p class="hero-text">
+                      Compare preços em diferentes mercados, economize tempo e veja onde sua lista sai mais barata.
+                    </p>
+                    <div class="hero-actions">
+                      <a class="btn-primary btn-primary--dark" href="./compras.html" data-hero-cta></a>
+                    </div>
+                  </div>
+                  <div class="economy-panel economy-panel--floating desktop-only" data-home-economy-desktop></div>
+                </section>
+                <section class="how-it-works">
+                  <div class="section-heading">
+                    <h2 class="card-title">Como funciona</h2> 
+                  </div>
+                  <div class="steps-row" data-home-steps></div>
+                </section>
+              </div>
+
+              <section class="home-card economy-panel economy-panel--stacked mobile-only" data-home-economy-mobile></section>
+
+              <div class="home-categories-row">
+                <section class="home-card categories-section">
+                  <div class="section-heading">
+                    <h2 class="card-title">Categorias populares</h2>
+                    <a class="link-muted" href="./compras.html">Ver todas</a>
+                  </div>
+                  <div class="categories-grid" data-home-categories></div>
+                </section>
+
+                <section class="smart-list-card smart-list-card--sidebar">
+                  <div class="smart-list-card__content">
+                    <span class="smart-list-card__badge">NOVO</span>
+                    <h2 class="smart-list-card__title">Lista Inteligente</h2>
+                    <p class="smart-list-card__text">
+                      Monte sua lista e compare preços nos mercados cadastrados.
+                    </p>
+                    <a class="btn btn--inverted btn--md" href="./compras.html">Montar lista</a>
+                  </div>
+                  <img
+                    class="smart-list-card__image"
+                    src="./assets/images/smart-list-bag.png"
+                    alt="Cestinha de compras com frutas e checklist"
+                  />
+                </section>
+              </div>
+
+              <section class="home-card market-comparison">
+                <div class="section-heading">
+                  <h2 class="card-title">Comparação de mercados</h2>
+                  <a class="btn-secondary btn-secondary--compact" href="./comparacao.html">
+                    Ver todos os mercados comparados
+                  </a>
+                </div>
+                <div class="market-table-wrap" data-home-market-comparison></div>
+              </section>
+
+              </div>
+
+              <aside class="page-side col-4 side-panel home-panel">
+              <section class="panel-card side-panel__section product-alert-card" data-home-product-alert></section>
+              <section class="panel-card side-panel__section">
+                <h3 class="panel-card__title">Como o Comparaqui ajuda você</h3>
+                <div class="home-help-list" data-home-help></div>
+              </section>
+              <section class="panel-card side-panel__section">
+                <h3 class="panel-card__title">Tendências de preço</h3>
+                <div class="price-trends-list" data-home-price-trends></div>
+              </section>
+              </aside>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/home.js"></script>
+  </body>
+</html>

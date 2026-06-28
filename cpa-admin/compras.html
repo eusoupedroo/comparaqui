@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaqui — Minha lista de compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="page-content">
+        <main>
+          <div class="page-inner">
+            <header class="page-header page-header--row">
+              <div>
+                <span class="eyebrow">Lista inteligente</span>
+                <h1 class="page-title">Minha lista</h1>
+                <p class="page-subtitle">Adicione produtos, ajuste quantidades e acompanhe o valor estimado em tempo real.</p>
+              </div>
+              <span class="badge" data-total-items-badge>0 itens</span>
+            </header>
+
+            <section class="content-grid">
+              <div class="search-field">
+                <span data-search-icon aria-hidden="true"></span>
+                <input class="search-input" type="search" placeholder="Buscar por produto ou marca" data-search-input />
+              </div>
+
+              <div class="filter-strip" data-filter-strip></div>
+            </section>
+
+            <section class="stacked-section">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow">Produtos sugeridos</span>
+                  <h2 class="page-title section-title--large">Adicione itens à sua lista</h2>
+                </div>
+              </div>
+              <div class="products-view">
+                <div class="products-cards" data-products-grid></div>
+                <div class="products-table-wrap" data-products-table></div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <div class="list-summary" data-desktop-summary>
+          <div class="list-summary__info">
+            <span class="list-summary__icon" data-summary-icon aria-hidden="true"></span>
+            <div class="list-summary__details">
+              <strong class="list-summary__items" data-desktop-items>0 produtos adicionados</strong>
+              <span class="list-summary__estimate">
+                Valor estimado: <span data-desktop-total>R$ 0,00</span>
+              </span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn-secondary" href="./revisao.html">Revisar compra</a>
+            <a class="btn-primary" href="./comparacao.html">Comparar mercados</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/compras.js"></script>
+  </body>
+</html>

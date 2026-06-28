@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaqui — Revisão da sua lista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/navigation.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="page-content">
+        <main>
+          <div class="page-inner">
+            <header class="page-header">
+              <span class="eyebrow">Confirme seus itens</span>
+              <h1 class="page-title">Revisão da sua lista</h1>
+              <p class="page-subtitle">Ajuste quantidades, aplique substituições mais baratas e visualize sua economia total.</p>
+            </header>
+
+            <div class="page-grid">
+              <section class="page-main col-8">
+                <article class="card" data-official-list>
+                  <!-- lista oficial renderizada via JS -->
+                </article>
+
+                <article class="card" data-products-review>
+                  <!-- tabela ou cards de produtos -->
+                </article>
+
+              </section>
+
+              <section class="page-side col-4 side-panel review-side">
+                <article class="card" data-alternative-list>
+                  <!-- sugestões -->
+                </article>
+
+                <article class="total-economy-card" data-total-economy-card hidden>
+                  <!-- economia total renderizada via JS -->
+                </article>
+
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/revisao.js"></script>
+  </body>
+</html>
