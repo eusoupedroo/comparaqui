@@ -50,7 +50,6 @@ Esta versão ainda não possui backend, autenticação, banco de dados, APIs rea
 ## Fotos do projeto
 
 > Espaço reservado para imagens do projeto.
-## Fotos do projeto
 
 ### Home
 
